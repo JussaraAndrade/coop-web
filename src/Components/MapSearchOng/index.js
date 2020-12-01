@@ -105,7 +105,7 @@ const MapSearchOng = ({listarUltimasOngsUf, listarUltimasOngsCidade}) => {
 
       <Mapa>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: '' }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_KEY_GOOGLE_MAPS }}
           defaultCenter={localUsuario}
           defaultZoom={zoomLevel}
           center={localUsuario}
