@@ -11,9 +11,9 @@ const Footer = () => {
                 <img src={logo} alt="Coop."/>
 
                 <RedesSociais>
-                    <a href="https://www.facebook.com/Coop-102893241632625" target="_blank"> <AiFillFacebook size={24} /> </a>
-                    <a href="https://twitter.com/Coop56910655" target="_blank"><AiOutlineTwitter size={24} /> </a>
-                    <a href="https://www.instagram.com/coop.ongs/" target="_blank"><AiOutlineInstagram size={24} /> </a>
+                    <a href="https://www.facebook.com/Coop-102893241632625" target="_blank" rel="noopener noreferrer"> <AiFillFacebook size={24} /> </a>
+                    <a href="https://twitter.com/Coop56910655" target="_blank" rel="noopener noreferrer"><AiOutlineTwitter size={24} /> </a>
+                    <a href="https://www.instagram.com/coop.ongs/" target="_blank" rel="noopener noreferrer"><AiOutlineInstagram size={24} /> </a>
                 </RedesSociais>
             </Content>
         </Container>

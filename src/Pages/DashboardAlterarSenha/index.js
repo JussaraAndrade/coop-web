@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import * as Yup from 'yup';
 
 import { useToast } from '../../hooks/toast';
@@ -16,7 +16,7 @@ import { Container, Content, Form, FieldGroup, Field } from "./styles";
 const DashboardAlterarSenha = () => {
   const formRef = useRef(null);
   const { addToast } = useToast();
-  const { id, email } = useAuth();
+  const { email } = useAuth();
 
   const [atualizando, setAtualizando] = useState(false);
 
