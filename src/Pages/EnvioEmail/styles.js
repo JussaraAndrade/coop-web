@@ -42,7 +42,7 @@ export const Container = styled.main`
     form {
       display: flex;
       flex-direction: column;
-      height: 30vh;
+      height: auto;
       justify-content: space-between;
       width: 354px;
 

@@ -41,11 +41,11 @@ export const Container = styled.main`
     form {
       display: flex;
       flex-direction: column;
-      height: 50vh;
       justify-content: space-between;
       width: 354px;
 
       p {
+        margin-bottom: 24px;
         color: var(--preto);
         font-size: 3em;
         font-weight: 700;
@@ -101,6 +101,7 @@ export const Container = styled.main`
         }
 
         input {
+          margin-bottom: 24px;
           background-color: var(--cinza);
           border: none;
           border-radius: 1px;

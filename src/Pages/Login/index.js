@@ -50,8 +50,8 @@ const Login = () => {
     <Container>
       <aside>
         <p>
-          Colabore com o <br />
-          trabalho de ONGs
+          Acesse o dashboard e<br />
+          mantenha os dados atualizados
         </p>
       </aside>
 

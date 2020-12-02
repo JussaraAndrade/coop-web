@@ -6,7 +6,7 @@ import { Container } from "./styles";
 import initial from "../../assets/piggy_bank.gif";
 import connection from "../../assets/connection-form.png";
 import question from "../../assets/question-form.png";
-import equipe from "../../assets/equipe.png";
+import equipe from "../../assets/equipe.jpg";
 import HeaderHome from "../../Components/Header";
 // import BurguerMenu from "../../Components/BurguerMenu";
 import Footer from "../../Components/Footer";
