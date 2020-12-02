@@ -38,32 +38,6 @@ export const Form = styled(Unform)`
   }
 `;
 
-export const Select = styled.select`
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  flex: 1;
-  width: 430px;
-  height: 46px;
-
-  background: #F9F9F9;
-  border-radius: 10px;
-  border: 0;
-  padding: 16px 24px;
-  font-size: 16px;
-
-`;
-
-export const Option = styled.option`
-  background: #F9F9F9;
-  border-radius: 10px;
-  border: 0;
-  padding: 16px 24px;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
 export const Title = styled.h1`
   flex: 1;
   // margin-bottom: 60px;

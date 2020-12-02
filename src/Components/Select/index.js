@@ -5,19 +5,20 @@ import { useField } from '@unform/core';
 
 const customStyles = {
   container: () => ({
+    position: 'relative',
     marginTop: '8px',
     width: '320px',
-    border: 'none'
   }),
 
   input: () => ({
-    height: '36px',
+    height: '50px',
     border: 'none'
   }),
 
   menu: (provided, state) => ({
     ...provided,
     width: '320px',
+    top: '50px',
   }),
 }
 

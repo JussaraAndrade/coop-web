@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import * as Yup from 'yup';
+import { subYears, format } from 'date-fns';
 import { useHistory } from 'react-router-dom';
 
 import {
@@ -32,6 +33,10 @@ const CadastroOng = () => {
 
   const [selectedUf, setSelectedUf] = useState();
   const [selectedCidade, setSelectedCidade] = useState();
+
+  const [maioridade] = useState(() => {
+    return format(subYears(new Date(), 18), 'yyyy-MM-dd');
+  })
 
   const [trabalhaOng, setTrabalhaOng] = useState(undefined);
 
@@ -142,6 +147,7 @@ const CadastroOng = () => {
         whatsapp_responsavel: Yup.string()
           .required('Informe o número do WhatsApp')
           .matches(/\(\d{2}\) \d{5}-\d{4}/, 'Informe um número de WhatsApp válido.'),
+        data_nascimento_responsavel: Yup.string().required('Informar a data de nascimento'),
         trabalha_ong: Yup.bool().required("Informe se trabalha na ONG"),
       });
 
@@ -405,6 +411,7 @@ const CadastroOng = () => {
               </label>
               <Input
                 type="date"
+                max={maioridade}
                 name="data_nascimento_responsavel"
               />
             </Field>
