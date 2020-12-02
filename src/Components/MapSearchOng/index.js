@@ -16,10 +16,7 @@ const MapSearchOng = ({listarUltimasOngsUf, listarUltimasOngsCidade}) => {
   const [listaCidades, setListaCidades] = useState([]);
   const [ufSelecionada, setUfSelecionada] = useState('');
   const [ongsCidade, setOngsCidade] = useState([]);
-  const [localUsuario, setLocalUsuario] = useState({
-      lat: -13.7026315,
-      lng: -69.688677,
-    });
+  const [localUsuario, setLocalUsuario] = useState({});
   const [zoomLevel, setZoomLevel] = useState(2);
 
   useEffect(() => {
@@ -31,6 +28,17 @@ const MapSearchOng = ({listarUltimasOngsUf, listarUltimasOngsCidade}) => {
       });
 
       setZoomLevel(14);
+
+      // Pegar ONGs da localização coletada pelo navegador
+      api.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${process.env.REACT_APP_KEY_GOOGLE_MAPS}`).then(response => {
+        const dados = response.data.plus_code.compound_code.split(', ');
+        const cidadeUf = dados[1].split(' - ');
+        
+        api.get(`/ongs/${cidadeUf[1]}/${cidadeUf[0]}`).then(response => {
+          setOngsCidade(response.data.ongs);
+        });
+
+      });
     });
 
     // Pega estados que tem ONGs cadastradas
