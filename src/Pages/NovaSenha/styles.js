@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+import { Form as Unform } from "@unform/web";
 
 export const Container = styled.main`
   align-items: center;
@@ -15,7 +16,7 @@ export const Container = styled.main`
     width: 55vw;
 
     p {
-      color: #FFF;
+      color: #fff;
       font-size: 4.8em;
       font-weight: 700;
       line-height: 56px;
@@ -41,7 +42,7 @@ export const Container = styled.main`
     form {
       display: flex;
       flex-direction: column;
-      height: 50vh;
+      height: 60vh;
       justify-content: space-between;
       width: 354px;
 
@@ -63,7 +64,7 @@ export const Container = styled.main`
       div {
         display: flex;
         flex-direction: column;
-      
+
         label {
           color: var(--preto);
           font-size: 1.8em;
@@ -83,7 +84,7 @@ export const Container = styled.main`
             line-height: 14.06px;
           }
         }
-        
+
         div {
           position: relative;
         }
@@ -133,10 +134,10 @@ export const Container = styled.main`
         text-decoration: underline;
       }
       span:hover {
-        opacity: .8;
+        opacity: 0.8;
       }
-    } 
-  } 
+    }
+  }
 
   @media (max-width: 935px) {
     flex-direction: column;
@@ -144,7 +145,7 @@ export const Container = styled.main`
     aside {
       border-radius: 25px;
       height: 20vh;
-  
+
       p {
         font-size: 2.8em;
         text-align: start;
@@ -200,4 +201,27 @@ export const Container = styled.main`
     }
   }
 `;
+export const Field = styled.div`
+  flex: 1;
 
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+
+  label span {
+    color: var(--roxo);
+    font-weight: 700;
+  }
+`;
+export const FieldGroup = styled.div`
+  flex: 1;
+  display: flex;
+`;
+
+export const Form = styled(Unform)`
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  justify-content: space-between;
+  width: 354px;
+`;

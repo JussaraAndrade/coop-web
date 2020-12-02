@@ -15,6 +15,8 @@ import DashboardDados from '../Pages/DashboardDados';
 import DashboardPublicacoes from '../Pages/DashboardPublicacoes';
 import DashboardAlterarSenha from '../Pages/DashboardAlterarSenha';
 import DashboardFotos from '../Pages/DashboardFotos';
+import EnvioEmail from '../Pages/EnvioEmail';
+import NovaSenha from '../Pages/NovaSenha';
 
 
 const Routes = () => (
@@ -26,6 +28,8 @@ const Routes = () => (
     <Route path="/perfil/:id" component={Perfil} />
     <Route path="/doacao/:id" component={Doacao} />
     <Route path="/cadastrar-ong" component={CadastroOng} exact />
+    <Route path="/esqueceu-senha" component={EnvioEmail} exact />
+    <Route path="/redefina-senha" component={NovaSenha} exact  />
     
     {/* Rotas privadas: precisa ter a propriedade isPrivate */}
     <Route path="/dashboard" component={DashboardInicio} exact isPrivate />
