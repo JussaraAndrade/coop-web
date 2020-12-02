@@ -10,12 +10,12 @@ import api from "../../services/api";
 
 import Input from "../../Components/Input";
 
-// import { useAuth } from "../../hooks/auth";
+import { useAuth } from "../../hooks/auth";
 
 import * as Yup from "yup";
 
 const EnvioEmail = () => {
-  // const { email } = useAuth();
+  const { email } = useAuth();
   const { addToast } = useToast();
   const history = useHistory();
   const formRef = useRef(null);
