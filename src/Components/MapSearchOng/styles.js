@@ -94,10 +94,11 @@ export const ContentPin = styled.div`
 export const AvatarPin = styled.div`
   width: 50px;
   height: 50px;
+  margin: 0 8px;
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
     border-radius: 8px;
   }
 `;

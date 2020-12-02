@@ -121,10 +121,19 @@ const MapSearchOng = ({listarUltimasOngsUf, listarUltimasOngsCidade}) => {
               >
                 <ContentPin>
                   <AvatarPin>
-                    <img 
-                      src={`https://ui-avatars.com/api/?name=${ong.nome_ong.replaceAll(' ', '+')}&size=50&background=ffffff`} 
-                      alt={ong.nome_ong}
-                    />
+                    {ong.logo ? (
+                      <img 
+                        src={ong.logo} 
+                        alt={ong.nome_ong}
+                      />
+                    ) : 
+                      ong.nome_ong && (
+                        <img 
+                          src={`https://ui-avatars.com/api/?name=${ong.nome_ong.replaceAll(' ', '+')}&size=80&background=ffffff`} 
+                          alt={ong.nome_ong}
+                        />
+                      )
+                    }
                   </AvatarPin>
 
                   <ResumoOngPin id="resumo-ong-pin">
