@@ -24,6 +24,7 @@ const EnvioEmail = () => {
 
   const handleSubmit = async (data, { reset }) => {
     try {
+      data.email = email;
       data.email = userEmail;
 
       setEnviando(true);
