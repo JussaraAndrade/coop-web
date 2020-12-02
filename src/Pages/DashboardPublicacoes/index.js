@@ -48,12 +48,20 @@ const DashboardInicio = () => {
   
       // Pega o número total de visualizações das publicações
       api.get(`/publicacao/${id}/total-visualizacoes`).then((response) => {
-        SetNumTotalVisealizacoes(response.data);
+        if(response.data) {
+          SetNumTotalVisealizacoes(response.data);
+        } else {
+          SetNumTotalVisealizacoes(0);
+        }
       });
   
       // Pega a média das visualizações das publicações
       api.get(`/publicacao/${id}/media-visualizacoes`).then((response) => {
-        SetNumMedioVisualizacoes(response.data);
+        if(response.data) {
+          SetNumMedioVisualizacoes(response.data);
+        } else {
+          SetNumMedioVisualizacoes(0);
+        }
       });
   }, [id]);
 
@@ -292,19 +300,27 @@ const DashboardInicio = () => {
             </thead>
 
             <tbody>
-              {listaPublicacoes.map(publicacao => (
-                <tr key={publicacao.id}>
-                  <td>{publicacao.id}</td>
-                  <td>{publicacao.titulo_publicacao}</td>
-                  <td>{publicacao.data_publicacao}</td>
-                  <td>{publicacao.visualizacoes}</td>
-                  <td>
-                    <ButtonExcluir onClick={() => { setShowModalConfirmacaoExclusao(true); setPublicacaoParaExcluir(publicacao); }}>
-                      <MdDelete />
-                    </ButtonExcluir>
+              {listaPublicacoes.length > 0 ? (
+                listaPublicacoes.map(publicacao => (
+                  <tr key={publicacao.id}>
+                    <td>{publicacao.id}</td>
+                    <td>{publicacao.titulo_publicacao}</td>
+                    <td>{publicacao.data_publicacao}</td>
+                    <td>{publicacao.visualizacoes}</td>
+                    <td>
+                      <ButtonExcluir onClick={() => { setShowModalConfirmacaoExclusao(true); setPublicacaoParaExcluir(publicacao); }}>
+                        <MdDelete />
+                      </ButtonExcluir>
+                    </td>
+                  </tr>
+                ))  
+              ) : (
+                <tr>
+                  <td colSpan="5">
+                    <h2>Não há publicações!</h2>
                   </td>
                 </tr>
-              ))}
+              )}
             </tbody>
           </table>
         </Content>
